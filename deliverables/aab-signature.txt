@@ -1,0 +1,78 @@
+
+jar verified.
+
+Warning: 
+This jar contains entries whose certificate chain is invalid. Reason: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+This jar contains entries whose signer certificate is self-signed.
+This jar contains signatures that do not include a timestamp. Without a timestamp, users may not be able to validate this jar after any of the signer certificates expire (as early as 2054-01-24).
+POSIX file permission and/or symlink attributes detected. These attributes are ignored when signing and are not protected by the signature.
+
+This JAR file contains internal inconsistencies that may result in different contents when reading via JarFile and JarInputStream:
+- Manifest is missing when reading via JarInputStream
+- Entry BUNDLE-METADATA/com.android.tools.build.gradle/app-metadata.properties is signed in JarFile but is not signed in JarInputStream
+- Entry BUNDLE-METADATA/com.android.tools.build.libraries/dependencies.pb is signed in JarFile but is not signed in JarInputStream
+- Entry BUNDLE-METADATA/com.android.tools/d8.json is signed in JarFile but is not signed in JarInputStream
+- Entry BundleConfig.pb is signed in JarFile but is not signed in JarInputStream
+- Entry base/dex/classes.dex is signed in JarFile but is not signed in JarInputStream
+- Entry base/manifest/AndroidManifest.xml is signed in JarFile but is not signed in JarInputStream
+- Entry base/res/drawable/game_icon.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/resources.pb is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/ACasino.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/AChurch.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/ACreep.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/ADock.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/ASamedi.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/AShops.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/AStreet.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/AUltor.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Bike.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Brotherhood.lvl is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Car_Jeep.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Car_Police.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Car_Sedan.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Car_Sportcar.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Car_Van.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Creep.lvl is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Creep.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Dock.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Effects.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Female.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Font0.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Font1.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Human.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Icon.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Interface.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Level1.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Level2.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Level3.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Level4.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Level5.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/META-INF/com/android/build/gradle/app-metadata.properties is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/META-INF/version-control-info.textproto is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/MainMenu.mid is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Mainmenu.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Mainmenu2.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Policeman.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Portraits.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Robbery.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Ronin.lvl is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Shadow.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Shops.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/SonsOfSamedi.lvl is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Splash.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Street.lvl is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Street.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Title.png is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/Ultor.lvl is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/ak-47.amr is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/bin.all is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/explosion.amr is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/melee.amr is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/pistol.amr is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/shotgun.amr is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/use.mid is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/uzi.amr is signed in JarFile but is not signed in JarInputStream
+- Entry base/root/wmcdist.id is signed in JarFile but is not signed in JarInputStream
+- Entry META-INF/MANIFEST.MF is signed in JarFile but is not signed in JarInputStream
+
+Re-run with the -verbose and -certs options for more details.

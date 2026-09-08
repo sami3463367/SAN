@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=SAN Android Upload, O=SAN
+Signer #1 certificate SHA-256 digest: 23ae1a3126729c7c847304e79fb714ba23f6d26fff6b49a08eec6a9095df7ca0
+Signer #1 certificate SHA-1 digest: 3be568a86e169135a7c0de7ccaff3df2f83a1b3d
+Signer #1 certificate MD5 digest: 9aceb0a80805dd5cf839099352cc0d7e
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 2b95ba5322d5775f03c1ba3be8103cae66eae90600cc145aebe3015ba71b4f4c
+Signer #1 public key SHA-1 digest: f9cc655b0e354ef59bc6477bb7e9a3fcda81ca52
+Signer #1 public key MD5 digest: f30ddeda85ed8e7041cb81ca39691d5c

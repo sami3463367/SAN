@@ -17,15 +17,8 @@
 > Task :app:preDebugAndroidTestBuild SKIPPED
 > Task :app:processDebugManifestForPackage
 > Task :app:javaPreCompileDebugAndroidTest
-> Task :app:processDebugResources
 > Task :app:checkDebugAndroidTestAarMetadata
-
-> Task :app:compileDebugJavaWithJavac
-Note: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-
 > Task :app:processDebugAndroidTestNavigationResources
-> Task :app:bundleDebugClassesToCompileJar
 > Task :app:generateDebugAndroidTestResValues
 > Task :app:compileDebugAndroidTestNavigationResources
 > Task :app:mapDebugAndroidTestSourceSetPaths
@@ -39,50 +32,57 @@ Note: Recompile with -Xlint:deprecation for details.
 > Task :app:compressDebugAssets
 > Task :app:processDebugJavaRes NO-SOURCE
 > Task :app:checkDebugDuplicateClasses
-> Task :app:mergeLibDexDebug
-> Task :app:processDebugAndroidTestResources
+> Task :app:processDebugResources
 > Task :app:mergeDebugJavaResource
-> Task :app:dexBuilderDebug
+> Task :app:processDebugAndroidTestResources
+
+> Task :app:compileDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:mergeLibDexDebug
 > Task :app:compileDebugAndroidTestJavaWithJavac
-> Task :app:desugarDebugFileDependencies
+> Task :app:dexBuilderDebug
 > Task :app:mergeDebugJniLibFolders
 > Task :app:mergeDebugNativeLibs NO-SOURCE
 > Task :app:stripDebugDebugSymbols NO-SOURCE
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
+> Task :app:mergeProjectDexDebug
 > Task :app:mergeDebugAndroidTestShaders
 > Task :app:compileDebugAndroidTestShaders NO-SOURCE
 > Task :app:generateDebugAndroidTestAssets UP-TO-DATE
-> Task :app:mergeProjectDexDebug
 > Task :app:mergeDebugAndroidTestAssets
 > Task :app:compressDebugAndroidTestAssets
 > Task :app:processDebugAndroidTestJavaRes NO-SOURCE
-> Task :app:mergeExtDexDebug
-> Task :app:packageDebug
-> Task :app:createDebugApkListingFileRedirect
-> Task :app:checkDebugAndroidTestDuplicateClasses
 > Task :app:desugarDebugAndroidTestFileDependencies
+> Task :app:checkDebugAndroidTestDuplicateClasses
+> Task :app:dexBuilderDebugAndroidTest
 > Task :app:mergeDebugAndroidTestJavaResource
 > Task :app:mergeLibDexDebugAndroidTest
-> Task :app:dexBuilderDebugAndroidTest
 > Task :app:mergeDebugAndroidTestJniLibFolders
 > Task :app:mergeProjectDexDebugAndroidTest
 > Task :app:mergeDebugAndroidTestNativeLibs NO-SOURCE
 > Task :app:stripDebugAndroidTestDebugSymbols NO-SOURCE
 > Task :app:validateSigningDebugAndroidTest
 > Task :app:writeDebugAndroidTestSigningConfigVersions
+> Task :app:desugarDebugFileDependencies
+> Task :app:mergeExtDexDebug
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
 > Task :app:mergeExtDexDebugAndroidTest
 > Task :app:packageDebugAndroidTest
 > Task :app:createDebugAndroidTestApkListingFileRedirect
 [EmulatorConsole]: Failed to start Emulator console for 5554
 
 > Task :app:connectedDebugAndroidTest
-Starting 2 tests on emulator-5554 - 10
+Starting 2 tests on emulator-5554 - 16
 
-emulator-5554 - 10 Tests 0/2 completed. (0 skipped) (0 failed)
-Finished 2 tests on emulator-5554 - 10
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__reactivecircus_android-emulator-runner-1788879923661.json
+emulator-5554 - 16 Tests 0/2 completed. (0 skipped) (0 failed)
+Finished 2 tests on emulator-5554 - 16
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__reactivecircus_android-emulator-runner_2-1788880100367.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/SAN/SAN/build/reports/problems/problems-report.html
 
@@ -92,5 +92,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 1m 20s
+BUILD SUCCESSFUL in 1m 22s
 61 actionable tasks: 61 executed

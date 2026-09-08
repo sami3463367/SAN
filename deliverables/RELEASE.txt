@@ -1,0 +1,6 @@
+Source commit: 1c8e5c8b00f7df6eabacc444d7083b88efee2265
+Build run: https://github.com/sami3463367/SAN/actions/runs/34242193137
+Application ID: net.san.gtamod.offline
+Version: 1.0.0 (1)
+Minimum: Android 10 (API 29)
+Target: API 36

@@ -10,7 +10,7 @@ For more details see https://docs.gradle.org/8.13/release-notes.html
 
 Starting a Gradle Daemon (subsequent builds will be faster)
 > Task :wrapper
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1788879211126.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1788879810199.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/SAN/SAN/build/reports/problems/problems-report.html
 
@@ -20,7 +20,7 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 34s
+BUILD SUCCESSFUL in 33s
 1 actionable task: 1 executed
 Downloading https://services.gradle.org/distributions/gradle-8.13-bin.zip
 .............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
@@ -49,12 +49,16 @@ Downloading https://services.gradle.org/distributions/gradle-8.13-bin.zip
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
-> Task :app:processDebugManifestForPackage
 > Task :app:compressDebugAssets
+> Task :app:processDebugManifestForPackage
 > Task :app:checkDebugDuplicateClasses
 > Task :app:mergeLibDexDebug
-> Task :app:processDebugResources
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
 > Task :app:mergeDebugJavaResource
+> Task :app:processDebugResources
+> Task :app:validateSigningDebug
 
 > Task :app:compileDebugJavaWithJavac
 Note: Some input files use or override a deprecated API.
@@ -62,16 +66,10 @@ Note: Recompile with -Xlint:deprecation for details.
 
 > Task :app:bundleDebugClassesToRuntimeJar
 > Task :app:bundleDebugClassesToCompileJar
+> Task :app:desugarDebugFileDependencies
 > Task :app:dexBuilderDebug
 > Task :app:compileDebugUnitTestJavaWithJavac
-> Task :app:desugarDebugFileDependencies
 > Task :app:testDebugUnitTest
-> Task :app:mergeDebugJniLibFolders
-> Task :app:mergeDebugNativeLibs NO-SOURCE
-> Task :app:stripDebugDebugSymbols NO-SOURCE
-> Task :app:mergeProjectDexDebug
-> Task :app:mergeExtDexDebug
-> Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
 > Task :app:preReleaseBuild UP-TO-DATE
@@ -80,28 +78,38 @@ Note: Recompile with -Xlint:deprecation for details.
 > Task :app:generateReleaseResValues
 > Task :app:mapReleaseSourceSetPaths
 > Task :app:generateReleaseResources
+> Task :app:mergeProjectDexDebug
 > Task :app:createReleaseCompatibleScreenManifests
-> Task :app:mergeReleaseResources
 > Task :app:extractDeepLinksRelease
+> Task :app:mergeReleaseResources
 > Task :app:processReleaseMainManifest
 > Task :app:processReleaseManifest
 > Task :app:processApplicationManifestReleaseForBundle
 > Task :app:checkReleaseAarMetadata
+> Task :app:mergeExtDexDebug
 > Task :app:packageReleaseResources
-> Task :app:packageDebug
-> Task :app:processReleaseManifestForPackage
 > Task :app:parseReleaseLocalResources
-> Task :app:createDebugApkListingFileRedirect
-> Task :app:assembleDebug
 > Task :app:extractReleaseVersionControlInfo
 > Task :app:checkReleaseDuplicateClasses
 > Task :app:javaPreCompileRelease
+> Task :app:processReleaseManifestForPackage
 > Task :app:mergeReleaseStartupProfile
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
 > Task :app:mergeReleaseShaders
 > Task :app:compileReleaseShaders NO-SOURCE
 > Task :app:generateReleaseAssets UP-TO-DATE
-> Task :app:processReleaseResources
 > Task :app:mergeReleaseAssets
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :app:mergeReleaseJniLibFolders
+> Task :app:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:writeReleaseAppMetadata
+> Task :app:mergeReleaseArtProfile
+> Task :app:processReleaseResources
+> Task :app:collectReleaseDependencies
+> Task :app:mergeReleaseJavaResource
 > Task :app:bundleReleaseResources
 
 > Task :app:compileReleaseJavaWithJavac
@@ -109,17 +117,9 @@ Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 
 > Task :app:dexBuilderRelease
-> Task :app:processReleaseJavaRes NO-SOURCE
-> Task :app:mergeReleaseJniLibFolders
-> Task :app:mergeReleaseNativeLibs NO-SOURCE
-> Task :app:stripReleaseDebugSymbols NO-SOURCE
-> Task :app:writeReleaseAppMetadata
-> Task :app:mergeReleaseArtProfile
-> Task :app:collectReleaseDependencies
 > Task :app:configureReleaseDependencies
 > Task :app:extractReleaseNativeSymbolTables NO-SOURCE
 > Task :app:extractProguardFiles
-> Task :app:mergeReleaseJavaResource
 > Task :app:generateReleaseLintVitalReportModel
 > Task :app:desugarReleaseFileDependencies
 > Task :app:mergeReleaseGlobalSynthetics
@@ -136,7 +136,7 @@ Note: Recompile with -Xlint:deprecation for details.
 > Task :app:produceReleaseBundleIdeListingFile
 > Task :app:createReleaseBundleListingFileRedirect
 > Task :app:bundleRelease
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1788879243329.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1788879840372.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/SAN/SAN/build/reports/problems/problems-report.html
 
@@ -146,5 +146,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 32s
+BUILD SUCCESSFUL in 31s
 85 actionable tasks: 85 executed

@@ -1,6 +1,6 @@
 {
   "package": "app/build/outputs/bundle/release/app-release.aab",
-  "sha256": "32619f56d1f0f5bca55e3e8e08efef6287902a682a7baecd3b0e23369051a5e6",
+  "sha256": "c479c23aa866e2232fb1644ca96f41ee1cd70d220f30c5aac465da160def5f21",
   "original_assets_verified": 54,
   "byte_identical": true,
   "native_libraries": 0

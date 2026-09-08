@@ -1,0 +1,7 @@
+{
+  "package": "app/build/outputs/apk/debug/app-debug.apk",
+  "sha256": "384e951c766f43c057ffb31f46dc18f63a18f7d2cfb0dc6e511c7338576918b2",
+  "original_assets_verified": 54,
+  "byte_identical": true,
+  "native_libraries": 0
+}

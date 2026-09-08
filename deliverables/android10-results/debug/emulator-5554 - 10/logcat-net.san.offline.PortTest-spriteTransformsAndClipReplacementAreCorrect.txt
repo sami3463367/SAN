@@ -1,0 +1,2 @@
+09-08 14:32:56.952  3478  3497 I TestRunner: started: spriteTransformsAndClipReplacementAreCorrect(net.san.offline.PortTest)
+09-08 14:32:56.954  3478  3497 I TestRunner: finished: spriteTransformsAndClipReplacementAreCorrect(net.san.offline.PortTest)

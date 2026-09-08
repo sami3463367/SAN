@@ -27,7 +27,18 @@ public class PortTest {
     private static void shot(String name)throws Exception{
         File dir=new File(GameRuntime.context().getExternalFilesDir(null),"evidence");dir.mkdirs();
         try(FileOutputStream out=new FileOutputStream(new File(dir,name+".png"))){GameRuntime.canvas().snapshot().compress(Bitmap.CompressFormat.PNG,100,out);}
-        InstrumentationRegistry.getInstrumentation().getUiAutomation().takeScreenshot().compress(Bitmap.CompressFormat.PNG,100,new FileOutputStream(new File(dir,name+"-landscape.png")));
+        try(FileOutputStream out=new FileOutputStream(new File(dir,name+"-landscape.png"))){
+            InstrumentationRegistry.getInstrumentation().getUiAutomation().takeScreenshot().compress(Bitmap.CompressFormat.PNG,100,out);
+        }
+        shell("mkdir -p /data/local/tmp/san-evidence");
+        shell("cp "+new File(dir,name+".png").getAbsolutePath()+" /data/local/tmp/san-evidence/"+name+".png");
+        shell("cp "+new File(dir,name+"-landscape.png").getAbsolutePath()+" /data/local/tmp/san-evidence/"+name+"-landscape.png");
+    }
+    private static void shell(String command)throws Exception {
+        try(android.os.ParcelFileDescriptor fd=InstrumentationRegistry.getInstrumentation().getUiAutomation().executeShellCommand(command);
+            InputStream in=new android.os.ParcelFileDescriptor.AutoCloseInputStream(fd)) {
+            byte[] buffer=new byte[1024];while(in.read(buffer)!=-1){}
+        }
     }
     @Test public void originalGameBootsAndLoadsNewGameOffline() throws Exception {
         android.app.Instrumentation ins=InstrumentationRegistry.getInstrumentation();

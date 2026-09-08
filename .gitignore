@@ -9,3 +9,5 @@ __pycache__/
 
 # Private Android signing material — never commit
 .signing/
+
+/SAN-private-signing-backup.zip

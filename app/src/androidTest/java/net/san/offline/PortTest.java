@@ -118,7 +118,11 @@ public class PortTest {
         long until=SystemClock.uptimeMillis()+5000;while(!booleanField("f")&&SystemClock.uptimeMillis()<until)SystemClock.sleep(100);
         assertTrue("Original loop pauses in background",booleanField("f"));
         long pausedFrames=GameRuntime.canvas().frames;SystemClock.sleep(500);assertTrue(GameRuntime.canvas().frames<=pausedFrames+1);
-        ins.getTargetContext().startActivity(intent);SystemClock.sleep(1500);assertFalse("Resumes on return",booleanField("f"));
+        // A background app cannot reliably bring itself to the front on Android 10+.
+        // Use the shell's foreground launch, equivalent to the user reopening the launcher icon.
+        shell("am start -W -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -n net.san.gtamod.offline/net.san.offline.GameActivity");
+        until=SystemClock.uptimeMillis()+10000;while(booleanField("f")&&SystemClock.uptimeMillis()<until)SystemClock.sleep(100);
+        assertFalse("Resumes after foreground launcher action",booleanField("f"));
         key(-5);shot("10-resumed");assertNull(GameRuntime.failure);
     }
     @Test public void spriteTransformsAndClipReplacementAreCorrect() {

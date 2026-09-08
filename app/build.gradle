@@ -1,0 +1,39 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'net.san.offline'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'net.san.gtamod.offline'
+        minSdk 29
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    signingConfigs {
+        if (System.getenv('ANDROID_KEYSTORE')) {
+            upload {
+                storeFile file(System.getenv('ANDROID_KEYSTORE'))
+                storePassword System.getenv('ANDROID_STORE_PASSWORD')
+                keyAlias System.getenv('ANDROID_KEY_ALIAS')
+                keyPassword System.getenv('ANDROID_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false // Preserve obfuscated original class names and resource lookups.
+            if (System.getenv('ANDROID_KEYSTORE')) signingConfig signingConfigs.upload
+        }
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+    testOptions { animationsDisabled = true }
+    packaging { resources.excludes += ['META-INF/MANIFEST.MF'] }
+}
+dependencies {
+    implementation files('libs/original-game.jar')
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test:rules:1.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+}

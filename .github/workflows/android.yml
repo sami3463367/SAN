@@ -2,30 +2,73 @@ name: Android port
 on:
   push:
     branches: [arena/01a0814e-san]
+    paths-ignore: ['deliverables/**', 'docs/inspection/**']
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: android-port-session
+  cancel-in-progress: false
 jobs:
-  inspect:
+  build-and-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
-      - name: Inspect original bytecode
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
+      - name: Set up Android SDK
         run: |
-          mkdir -p docs/inspection
-          curl -fL https://repo.maven.apache.org/maven2/org/benf/cfr/0.152/cfr-0.152.jar -o /tmp/cfr.jar
-          java -jar /tmp/cfr.jar app/libs/original-game.jar --outputdir /tmp/decompiled --silent true
-          cp /tmp/decompiled/*.java docs/inspection/
-          javap -classpath app/libs/original-game.jar -c -p h > docs/inspection/h.bytecode.txt
-          javap -classpath app/libs/original-game.jar -c -p SaintsRow2 > docs/inspection/entrypoint.bytecode.txt
-      - name: Save inspection on session branch
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+      - name: Inventory and build
+        run: |
+          python3 scripts/inspect_game.py > /tmp/inspection.log
+          gradle wrapper --gradle-version 8.13
+          ./gradlew testDebugUnitTest assembleDebug bundleRelease --stacktrace
+      - name: Enable emulator acceleration
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Test on Android 10
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          arch: x86_64
+          target: default
+          profile: pixel_2
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: |
+            adb shell settings put global airplane_mode_on 1
+            adb shell svc wifi disable
+            ./gradlew connectedDebugAndroidTest --stacktrace; RESULT=$?; mkdir -p deliverables/evidence; adb pull /sdcard/Android/data/net.san.gtamod.offline/files/evidence/. deliverables/evidence/ || true; adb logcat -d > deliverables/evidence/android10-logcat.txt; exit $RESULT
+      - name: Package build outputs
+        if: always()
+        run: |
+          mkdir -p deliverables
+          cp app/build/outputs/apk/debug/app-debug.apk deliverables/san-offline-test.apk || true
+          cp app/build/outputs/bundle/release/app-release.aab deliverables/san-offline-unsigned.aab || true
+          cp -r app/build/outputs/androidTest-results/connected deliverables/test-results || true
+          find deliverables -type f -name '*.apk' -o -name '*.aab' | sort | xargs -r sha256sum > deliverables/SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: android-port-build
+          path: |
+            deliverables/
+            app/build/reports/
+      - name: Save requested deliverables on session branch
+        if: always()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/inspection
-          git diff --cached --quiet || git commit -m 'Document original game bytecode inspection'
+          git add deliverables gradlew gradlew.bat gradle/wrapper docs/asset-inventory.json || true
+          git diff --cached --quiet || git commit -m 'Record Android build outputs and emulator evidence'
           git push origin HEAD:arena/01a0814e-san

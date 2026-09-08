@@ -1,0 +1,366 @@
+09-08 14:47:43.793  3552  3571 I TestRunner: started: originalGameBootsAndLoadsNewGameOffline(net.san.offline.PortTest)
+09-08 14:47:43.835  1741  1986 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=1000 => granted (2801 us)
+09-08 14:47:43.836  1709  2379 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:44.077  1905  2843 W InputReader: Device has associated, but no associated display id.
+09-08 14:47:44.104  1905  2843 I chatty  : uid=1000(system) Binder:1905_D identical 28 lines
+09-08 14:47:44.104  1905  2843 W InputReader: Device has associated, but no associated display id.
+09-08 14:47:44.111  1905  1926 W system_server: Long monitor contention with owner Binder:1905_D (2843) at void com.android.server.wm.ActivityTaskManagerService.activityPaused(android.os.IBinder)(ActivityTaskManagerService.java:1696) waiters=0 in com.android.server.policy.WindowManagerPolicy$StartingSurface com.android.server.policy.PhoneWindowManager.addSplashScreen(android.os.IBinder, java.lang.String, int, android.content.res.CompatibilityInfo, java.lang.CharSequence, int, int, int, int, android.content.res.Configuration, int) for 303ms
+09-08 14:47:44.111  1905  1926 E system_server: Invalid ID 0x00000000.
+09-08 14:47:44.122  1905  1925 I InputManager-JNI: Viewport [0] to add: local:0
+09-08 14:47:44.125  1905  1988 I InputReader: Reconfiguring input devices.  changes=0x00000004
+09-08 14:47:44.125  1905  1988 I InputReader: Device reconfigured: id=1, name='virtio_input_multi_touch_1', size 1080x1920, orientation 1, mode 1, display id 0
+09-08 14:47:44.125  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_11' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.125  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_5' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.125  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_2' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.125  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_6' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.126  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_3' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.126  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_10' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.126  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_7' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.126  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_4' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.126  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_8' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.126  1905  1988 I InputReader: Touch device 'virtio_input_multi_touch_9' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+09-08 14:47:44.131  3552  3552 W ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@c120f15
+09-08 14:47:44.134  2584  2755 D EGL_emulation: eglMakeCurrent: 0x73b048c49aa0: ver 3 0 (tinfo 0x73b048c18960)
+09-08 14:47:44.134  2045  2045 D StatusBar: disable<e i a s b h r c s > disable2<q i n >
+09-08 14:47:44.139  1741  1774 E SurfaceFlinger: ro.sf.lcd_density must be defined as a build property
+09-08 14:47:44.139  1741  1774 E SurfaceFlinger: ro.sf.lcd_density must be defined as a build property
+09-08 14:47:44.151  1709  2379 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:44.164  3552  3577 D libEGL  : Emulator has host GPU support, qemu.gles is set to 1.
+09-08 14:47:44.170  3552  3577 W libc    : Unable to set property "qemu.gles" to "1": connection failed; errno=13 (Permission denied)
+09-08 14:47:44.150  3552  3552 W RenderThread: type=1400 audit(0.0:49): avc: denied { write } for name="property_service" dev="tmpfs" ino=6844 scontext=u:r:untrusted_app:s0:c116,c256,c512,c768 tcontext=u:object_r:property_socket:s0 tclass=sock_file permissive=0 app=net.san.gtamod.offline
+09-08 14:47:44.182  3552  3577 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+09-08 14:47:44.183  3552  3577 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+09-08 14:47:44.184  3552  3577 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+09-08 14:47:44.215  3552  3552 D LifecycleMonitor: Lifecycle status change: net.san.offline.GameActivity@9918791 in: PRE_ON_CREATE
+09-08 14:47:44.237  3552  3552 D LifecycleMonitor: Lifecycle status change: net.san.offline.GameActivity@9918791 in: CREATED
+09-08 14:47:44.238  3552  3552 D LifecycleMonitor: Lifecycle status change: net.san.offline.GameActivity@9918791 in: STARTED
+09-08 14:47:44.240  1905  2146 I MediaFocusControl: requestAudioFocus() from uid/pid 10116/3552 clientId=android.media.AudioManager@95a3f93net.san.offline.GameActivity$$ExternalSyntheticLambda1@97e0bd0 callingPack=net.san.gtamod.offline req=1 flags=0x0 sdk=36
+09-08 14:47:44.240  3552  3552 D LifecycleMonitor: Lifecycle status change: net.san.offline.GameActivity@9918791 in: RESUMED
+09-08 14:47:44.269  1709  2379 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:44.271  3552  3576 D HostConnection: HostConnection::get() New Host Connection established 0x73affd8b8a00, tid 3576
+09-08 14:47:44.275  3552  3576 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+09-08 14:47:44.288  3552  3576 D EGL_emulation: eglCreateContext: 0x73affd8b8be0: maj 3 min 0 rcv 3
+09-08 14:47:44.291  3552  3576 D EGL_emulation: eglMakeCurrent: 0x73affd8b8be0: ver 3 0 (tinfo 0x73b04861ac80)
+09-08 14:47:44.330  1709  2379 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:44.337  1566  1566 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device manifest.
+09-08 14:47:44.337  3552  3576 W Gralloc3: mapper 3.x is not supported
+09-08 14:47:44.356  3552  3576 D HostConnection: createUnique: call
+09-08 14:47:44.357  3552  3576 D HostConnection: HostConnection::get() New Host Connection established 0x73affd8b8d20, tid 3576
+09-08 14:47:44.369  3552  3576 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+09-08 14:47:44.370  3552  3576 D eglCodecCommon: allocate: Ask for block of size 0x1000
+09-08 14:47:44.370  3552  3576 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3ff807000 size 0x2000
+09-08 14:47:44.372  1709  2379 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:44.383  3552  3576 D EGL_emulation: eglMakeCurrent: 0x73affd8b8be0: ver 3 0 (tinfo 0x73b04861ac80)
+09-08 14:47:44.386  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:44.416  1709  2379 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:44.430  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 544768
+09-08 14:47:45.023  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 28672
+09-08 14:47:45.033  2045  2479 D HostConnection: HostConnection::get() New Host Connection established 0x73aff8578860, tid 2479
+09-08 14:47:45.033  2045  2479 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+09-08 14:47:45.034  2045  2479 D EGL_emulation: eglCreateContext: 0x73aff8578900: maj 3 min 0 rcv 3
+09-08 14:47:45.035  1905  1926 I Choreographer: Skipped 38 frames!  The application may be doing too much work on its main thread.
+09-08 14:47:45.062  1905  1926 I Choreographer: Skipped 39 frames!  The application may be doing too much work on its main thread.
+09-08 14:47:45.095  2045  2479 D EGL_emulation: eglMakeCurrent: 0x73aff8578900: ver 3 0 (tinfo 0x73affc9288c0)
+09-08 14:47:45.108  1905  1930 I ActivityTaskManager: Displayed net.san.gtamod.offline/net.san.offline.GameActivity: +1s267ms
+09-08 14:47:45.115  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 28672
+09-08 14:47:45.120  1709  1727 I chatty  : uid=1000(system) HwBinder:1709_1 identical 1 line
+09-08 14:47:45.130  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 28672
+09-08 14:47:45.148  2045  2271 D EGL_emulation: eglMakeCurrent: 0x73b048c4a540: ver 3 0 (tinfo 0x73b048cdd6c0)
+09-08 14:47:45.157  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 544768
+09-08 14:47:45.158  2045  2271 I OpenGLRenderer: Davey! duration=1044ms; Flags=1, IntendedVsync=54487784309, Vsync=54754450965, OldestInputEvent=9223372036854775807, NewestInputEvent=0, HandleInputStart=54770409530, AnimationStart=54770453420, PerformTraversalsStart=54770547350, DrawStart=55397723110, SyncQueued=55522468720, SyncStart=55524640750, IssueDrawCommandsStart=55524725800, SwapBuffers=55531887490, FrameCompleted=55534185550, DequeueBufferDuration=874000, QueueBufferDuration=501000,
+09-08 14:47:45.174  2045  2045 D StatusBar: disable<e i a s b h r c s > disable2<q i n >
+09-08 14:47:45.180  2045  2271 D EGL_emulation: eglMakeCurrent: 0x73b048c4a540: ver 3 0 (tinfo 0x73b048cdd6c0)
+09-08 14:47:45.183  2045  2271 I OpenGLRenderer: Davey! duration=1066ms; Flags=1, IntendedVsync=54487784309, Vsync=54754450965, OldestInputEvent=9223372036854775807, NewestInputEvent=0, HandleInputStart=54770409530, AnimationStart=54770453420, PerformTraversalsStart=54770547350, DrawStart=55551874100, SyncQueued=55551938050, SyncStart=55556698920, IssueDrawCommandsStart=55556791400, SwapBuffers=55558178490, FrameCompleted=55559062860, DequeueBufferDuration=93000, QueueBufferDuration=323000,
+09-08 14:47:45.211  2045  2045 I Choreographer: Skipped 48 frames!  The application may be doing too much work on its main thread.
+09-08 14:47:45.222  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 544768
+09-08 14:47:45.247  2045  2271 D EGL_emulation: eglMakeCurrent: 0x73b048c4a540: ver 3 0 (tinfo 0x73b048cdd6c0)
+09-08 14:47:45.257  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 544768
+09-08 14:47:45.258  2045  2271 I OpenGLRenderer: Davey! duration=862ms; Flags=1, IntendedVsync=54771149782, Vsync=55571149750, OldestInputEvent=9223372036854775807, NewestInputEvent=0, HandleInputStart=55586801310, AnimationStart=55586840440, PerformTraversalsStart=55586914120, DrawStart=55622692610, SyncQueued=55622939620, SyncStart=55623768970, IssueDrawCommandsStart=55623880830, SwapBuffers=55624833760, FrameCompleted=55634234920, DequeueBufferDuration=872000, QueueBufferDuration=2777000,
+09-08 14:47:45.270  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 487424
+09-08 14:47:45.313  2045  2271 D EGL_emulation: eglMakeCurrent: 0x73b048c4a540: ver 3 0 (tinfo 0x73b048cdd6c0)
+09-08 14:47:45.324  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 487424
+09-08 14:47:45.328  2045  2271 I OpenGLRenderer: Davey! duration=932ms; Flags=1, IntendedVsync=54771149782, Vsync=55571149750, OldestInputEvent=9223372036854775807, NewestInputEvent=0, HandleInputStart=55586801310, AnimationStart=55586840440, PerformTraversalsStart=55586914120, DrawStart=55687541720, SyncQueued=55688672710, SyncStart=55689360920, IssueDrawCommandsStart=55694235150, SwapBuffers=55698122100, FrameCompleted=55704343770, DequeueBufferDuration=4318000, QueueBufferDuration=349000,
+09-08 14:47:45.351  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 487424
+09-08 14:47:45.354  2045  2271 D EGL_emulation: eglMakeCurrent: 0x73b048c4a540: ver 3 0 (tinfo 0x73b048cdd6c0)
+09-08 14:47:45.356  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 544768
+09-08 14:47:45.407  2045  2271 D EGL_emulation: eglMakeCurrent: 0x73b048c4a540: ver 3 0 (tinfo 0x73b048cdd6c0)
+09-08 14:47:46.233  1741  1986 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=2000 => granted (86 us)
+09-08 14:47:46.233  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:46.244  1566  1566 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device manifest.
+09-08 14:47:46.244  3538  3548 W Gralloc3: mapper 3.x is not supported
+09-08 14:47:46.277  3538  3548 D HostConnection: createUnique: call
+09-08 14:47:46.278  3538  3548 D HostConnection: HostConnection::get() New Host Connection established 0x79c19d2081c0, tid 3548
+09-08 14:47:46.287  3538  3548 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+09-08 14:47:46.287  3538  3548 D eglCodecCommon: allocate: Ask for block of size 0x1000
+09-08 14:47:46.288  3538  3548 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3ff805000 size 0x2000
+09-08 14:47:46.301  1741  1986 E SurfaceFlinger: ro.sf.lcd_density must be defined as a build property
+09-08 14:47:46.302  1741  1986 E SurfaceFlinger: ro.sf.lcd_density must be defined as a build property
+09-08 14:47:46.303  3538  3583 D libEGL  : Emulator has host GPU support, qemu.gles is set to 1.
+09-08 14:47:46.312  3538  3583 W libc    : Unable to set property "qemu.gles" to "1": error code: 0x18
+09-08 14:47:46.313  3538  3583 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+09-08 14:47:46.313  3538  3583 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+09-08 14:47:46.314  3538  3583 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+09-08 14:47:46.320  3538  3583 D HostConnection: HostConnection::get() New Host Connection established 0x79c10b8739a0, tid 3583
+09-08 14:47:46.322  3538  3583 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+09-08 14:47:46.324  3538  3583 D EGL_emulation: eglCreateContext: 0x79c10b873ae0: maj 3 min 0 rcv 3
+09-08 14:47:46.325  3538  3583 D EGL_emulation: eglMakeCurrent: 0x79c10b873ae0: ver 3 0 (tinfo 0x79c10b8187e0)
+09-08 14:47:47.141  1796  3199 D NuPlayerDriver: NuPlayerDriver(0xf3c22700) created, clientPid(3552)
+09-08 14:47:47.144  1796  3199 I Codec2Client: Available Codec2 services: "software"
+09-08 14:47:47.144  1796  3199 I Codec2Client: Creating a Codec2 client to service "software"
+09-08 14:47:47.148  1796  3199 I Codec2Client: Client to Codec2 service "software" created
+09-08 14:47:47.157  1796  3599 D GenericSource: FileSource remote
+09-08 14:47:47.173  1796  3199 D NuPlayerDriver: NuPlayerDriver(0xef034980) created, clientPid(3552)
+09-08 14:47:47.175  1796  3199 I Codec2Client: Creating a Codec2 client to service "software"
+09-08 14:47:47.175  1796  3199 I Codec2Client: Client to Codec2 service "software" created
+09-08 14:47:47.177  1796  3603 D GenericSource: FileSource remote
+09-08 14:47:47.182  1796  3199 D NuPlayerDriver: NuPlayerDriver(0xef034180) created, clientPid(3552)
+09-08 14:47:47.184  1796  3199 I Codec2Client: Creating a Codec2 client to service "software"
+09-08 14:47:47.184  1796  3199 I Codec2Client: Client to Codec2 service "software" created
+09-08 14:47:47.186  1796  3607 D GenericSource: FileSource remote
+09-08 14:47:47.192  1796  3199 D NuPlayerDriver: NuPlayerDriver(0xef034880) created, clientPid(3552)
+09-08 14:47:47.193  1796  3199 I Codec2Client: Creating a Codec2 client to service "software"
+09-08 14:47:47.194  1796  3199 I Codec2Client: Client to Codec2 service "software" created
+09-08 14:47:47.195  1796  3611 D GenericSource: FileSource remote
+09-08 14:47:47.203  1796  3199 D NuPlayerDriver: NuPlayerDriver(0xef034e80) created, clientPid(3552)
+09-08 14:47:47.204  1796  3199 I Codec2Client: Creating a Codec2 client to service "software"
+09-08 14:47:47.205  1796  3199 I Codec2Client: Client to Codec2 service "software" created
+09-08 14:47:47.207  1796  3615 D GenericSource: FileSource remote
+09-08 14:47:47.217  1796  3199 D NuPlayerDriver: NuPlayerDriver(0xef034f80) created, clientPid(3552)
+09-08 14:47:47.219  1796  3199 I Codec2Client: Creating a Codec2 client to service "software"
+09-08 14:47:47.220  1796  3199 I Codec2Client: Client to Codec2 service "software" created
+09-08 14:47:47.222  1796  3619 D GenericSource: FileSource remote
+09-08 14:47:47.228  1796  3199 D NuPlayerDriver: NuPlayerDriver(0xeda18280) created, clientPid(3552)
+09-08 14:47:47.230  1796  3199 I Codec2Client: Creating a Codec2 client to service "software"
+09-08 14:47:47.231  1796  3199 I Codec2Client: Client to Codec2 service "software" created
+09-08 14:47:47.233  1796  3623 D GenericSource: FileSource remote
+09-08 14:47:47.389  1905  1925 I system_server: Explicit concurrent copying GC freed 34077(2217KB) AllocSpace objects, 10(264KB) LOS objects, 42% free, 6470KB/11MB, paused 674us total 25.984ms
+09-08 14:47:47.673  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:47.781  3552  3563 I .gtamod.offlin: NativeAlloc concurrent copying GC freed 169503(3789KB) AllocSpace objects, 37(740KB) LOS objects, 49% free, 2052KB/4104KB, paused 488us total 113.343ms
+09-08 14:47:48.245  3552  3581 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+09-08 14:47:48.245  3552  3581 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+09-08 14:47:48.245  1796  3056 D NuPlayerDriver: reset(0xef034880) at state 4
+09-08 14:47:48.248  1796  3610 D NuPlayerDriver: notifyResetComplete(0xef034880)
+09-08 14:47:48.251  3552  3581 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+09-08 14:47:48.251  3552  3581 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+09-08 14:47:48.251  1796  3056 D NuPlayerDriver: reset(0xef034e80) at state 4
+09-08 14:47:48.251  1796  3614 D NuPlayerDriver: notifyResetComplete(0xef034e80)
+09-08 14:47:48.261  3552  3581 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+09-08 14:47:48.261  3552  3581 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+09-08 14:47:48.261  1796  3056 D NuPlayerDriver: reset(0xef034f80) at state 4
+09-08 14:47:48.261  1796  3618 D NuPlayerDriver: notifyResetComplete(0xef034f80)
+09-08 14:47:48.269  3552  3581 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+09-08 14:47:48.269  3552  3581 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+09-08 14:47:48.269  1796  3056 D NuPlayerDriver: reset(0xeda18280) at state 4
+09-08 14:47:48.270  1796  3622 D NuPlayerDriver: notifyResetComplete(0xeda18280)
+09-08 14:47:48.286  1796  3056 D NuPlayerDriver: NuPlayerDriver(0xeda18300) created, clientPid(3552)
+09-08 14:47:48.290  1796  3056 I Codec2Client: Creating a Codec2 client to service "software"
+09-08 14:47:48.291  1796  3056 I Codec2Client: Client to Codec2 service "software" created
+09-08 14:47:48.292  1796  3637 D GenericSource: FileSource remote
+09-08 14:47:48.304  1796  3636 I GenericSource: start
+09-08 14:47:48.309  1796  3641 I OMXClient: IOmx service obtained
+09-08 14:47:48.310  1811  2265 I OMXMaster: makeComponentInstance(OMX.google.raw.decoder) in android.hardwar process
+09-08 14:47:48.311  1811  2265 E OMXNodeInstance: setConfig(0xf4e3c420:google.raw.decoder, ConfigPriority(0x6f800002)) ERROR: Undefined(0x80001001)
+09-08 14:47:48.311  1796  3641 I ACodec  : codec does not support config priority (err -2147483648)
+09-08 14:47:48.311  1811  2265 E OMXNodeInstance: getConfig(0xf4e3c420:google.raw.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+09-08 14:47:48.311  1796  3641 I MediaCodec: MediaCodec will operate in async mode
+09-08 14:47:48.374  1735  1829 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000008) and output flags (00000006)
+09-08 14:47:48.374  1735  1829 D AudioFlinger: Client defaulted notificationFrames to 5544 for frameCount 11088
+09-08 14:47:48.378  1735  1829 D AF::TrackHandle: OpPlayAudio: track:55 usage:14 not muted
+09-08 14:47:48.553  1671  3644 W audio_hw_generic: Not supplying enough data to HAL, expected position 1355 , only wrote 661
+09-08 14:47:48.583  1671  3644 W audio_hw_generic: Hardware backing HAL too slow, could only write 0 of 661 frames
+09-08 14:47:48.599  1671  3644 W audio_hw_generic: Hardware backing HAL too slow, could only write 0 of 661 frames
+09-08 14:47:50.093  1735  1840 D AF::Track: interceptBuffer: took 234us to intercept 0 tracks
+09-08 14:47:50.158  1735  1840 D AF::Track: interceptBuffer: took 263us to intercept 0 tracks
+09-08 14:47:50.193  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(8)
+09-08 14:47:50.708  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(3)
+09-08 14:47:50.870  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(6)
+09-08 14:47:51.915  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(3)
+09-08 14:47:52.038  1735  1840 D AF::Track: interceptBuffer: took 2716us to intercept 0 tracks
+09-08 14:47:52.529  1671  3644 W audio_hw_generic: Hardware backing HAL too slow, could only write 0 of 661 frames
+09-08 14:47:52.630  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(11)
+09-08 14:47:52.786  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:47:52.786  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:47:52.853  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:47:52.853  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:47:52.879  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:47:52.879  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:47:52.890  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:47:52.890  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:47:52.916  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:47:52.916  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:47:52.973  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:47:52.973  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:47:53.008  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:47:53.008  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:47:53.069  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(12)
+09-08 14:47:53.196  1735  1840 D AF::Track: interceptBuffer: took 338us to intercept 0 tracks
+09-08 14:47:53.339  1735  1840 D AF::Track: interceptBuffer: took 335us to intercept 0 tracks
+09-08 14:47:53.514  1662  2190 I netd    : trafficSwapActiveStatsMap() <38.53ms>
+09-08 14:47:53.517  1662  2190 I netd    : tetherGetStats() <0.82ms>
+09-08 14:47:54.182  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(1)
+09-08 14:47:54.351  1735  1840 D AF::Track: interceptBuffer: took 274us to intercept 0 tracks
+09-08 14:47:54.613  1735  1840 D AF::Track: interceptBuffer: took 266us to intercept 0 tracks
+09-08 14:47:54.840  1735  1840 D AF::Track: interceptBuffer: took 8562us to intercept 0 tracks
+09-08 14:47:54.931  1735  1840 D AF::Track: interceptBuffer: took 665us to intercept 0 tracks
+09-08 14:47:55.043  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(4)
+09-08 14:47:55.227  1671  3644 W audio_hw_generic: Not supplying enough data to HAL, expected position 295012 , only wrote 294806
+09-08 14:47:55.279  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(2)
+09-08 14:47:55.311  1735  1840 D AF::Track: interceptBuffer: took 315us to intercept 0 tracks
+09-08 14:47:55.434  1735  1840 D AF::Track: interceptBuffer: took 8257us to intercept 0 tracks
+09-08 14:47:55.501  1735  1840 D AF::Track: interceptBuffer: took 212us to intercept 0 tracks
+09-08 14:47:56.029  1735  1840 D AF::Track: interceptBuffer: took 768us to intercept 0 tracks
+09-08 14:47:56.478  1735  1840 D AF::Track: interceptBuffer: took 226us to intercept 0 tracks
+09-08 14:47:56.958  1735  1840 D AF::Track: interceptBuffer: took 287us to intercept 0 tracks
+09-08 14:47:57.095  1760  1760 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+09-08 14:47:57.109  1758  1758 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+09-08 14:47:57.341  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:57.819  3552  3563 I .gtamod.offlin: NativeAlloc concurrent copying GC freed 12795(539KB) AllocSpace objects, 5(148KB) LOS objects, 49% free, 2164KB/4329KB, paused 801us total 374.560ms
+09-08 14:47:57.832  1735  1840 D AF::Track: interceptBuffer: took 231us to intercept 0 tracks
+09-08 14:47:57.881  1735  1840 D AF::Track: interceptBuffer: took 364us to intercept 0 tracks
+09-08 14:47:58.267  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:47:58.267  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:47:58.338  1735  1840 D AF::Track: interceptBuffer: took 729us to intercept 0 tracks
+09-08 14:47:58.548  1735  1840 D AF::Track: interceptBuffer: took 393us to intercept 0 tracks
+09-08 14:47:58.597  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:47:58.669  1735  1840 D AF::Track: interceptBuffer: took 425us to intercept 0 tracks
+09-08 14:47:58.889  1735  1840 D AF::Track: interceptBuffer: took 255us to intercept 0 tracks
+09-08 14:47:59.280  1735  1840 D AF::Track: interceptBuffer: took 5751us to intercept 0 tracks
+09-08 14:47:59.390  1735  1840 D AF::Track: interceptBuffer: took 356us to intercept 0 tracks
+09-08 14:47:59.645  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(4)
+09-08 14:47:59.979  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:48:00.035  2045  2045 D KeyguardClockSwitch: Updating clock: 248
+09-08 14:48:00.215  3552  3563 I .gtamod.offlin: NativeAlloc concurrent copying GC freed 21526(909KB) AllocSpace objects, 0(0B) LOS objects, 49% free, 2039KB/4078KB, paused 19.552ms total 154.835ms
+09-08 14:48:00.419  1735  1840 D AF::Track: interceptBuffer: took 958us to intercept 0 tracks
+09-08 14:48:00.633  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(5)
+09-08 14:48:00.891  1905  3676 I system_server: The ClassLoaderContext is a special shared library.
+09-08 14:48:00.968  1905  3676 I chatty  : uid=1000(system) BackgroundDexOp identical 15 lines
+09-08 14:48:00.974  1905  3676 I system_server: The ClassLoaderContext is a special shared library.
+09-08 14:48:00.994  1735  1840 D AF::Track: interceptBuffer: took 233us to intercept 0 tracks
+09-08 14:48:01.001  1905  3676 I system_server: The ClassLoaderContext is a special shared library.
+09-08 14:48:01.226  1905  3676 I chatty  : uid=1000(system) BackgroundDexOp identical 15 lines
+09-08 14:48:01.228  1905  3676 I system_server: The ClassLoaderContext is a special shared library.
+09-08 14:48:01.231  1905  3676 I PackageManager.DexOptimizer: Running dexopt (dexoptNeeded=1) on: /data/app/net.san.gtamod.offline.test-8cieUME0gibRRNbxzL3QrQ==/base.apk pkg=net.san.gtamod.offline.test isa=x86_64 dexoptFlags=boot_complete,debuggable,public,enable_hidden_api_checks targetFilter=verify oatDir=/data/app/net.san.gtamod.offline.test-8cieUME0gibRRNbxzL3QrQ==/oat classLoaderContext=PCL[]{PCL[/system/framework/android.test.mock.jar]{PCL[/system/framework/android.test.base.jar]}#PCL[/system/framework/android.test.runner.jar]{PCL[/system/framework/android.test.base.jar]#PCL[/system/framework/android.test.mock.jar]{PCL[/system/framework/android.test.base.jar]}}}
+09-08 14:48:01.233  1790  1790 V installd: DexInv: --- BEGIN '/data/app/net.san.gtamod.offline.test-8cieUME0gibRRNbxzL3QrQ==/base.apk' ---
+09-08 14:48:01.320  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:48:01.374  1671  3644 W audio_hw_generic: Not supplying enough data to HAL, expected position 565864 , only wrote 565816
+09-08 14:48:01.408  1735  1840 D AudioFlinger: mixer(0x79fa591a9e00) throttle end: throttle time(3)
+09-08 14:48:01.410  3538  3543 I app_process: NativeAlloc concurrent copying GC freed 819(573KB) AllocSpace objects, 0(0B) LOS objects, 93% free, 101KB/1637KB, paused 8.324ms total 28.667ms
+09-08 14:48:01.540  1735  1840 D AF::Track: interceptBuffer: took 392us to intercept 0 tracks
+09-08 14:48:01.673  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:48:01.816  3677  3677 W dex2oat : Unexpected CPU variant for X86 using defaults: x86_64
+09-08 14:48:01.817  3677  3677 I dex2oat : /apex/com.android.runtime/bin/dex2oat --input-vdex-fd=-1 --output-vdex-fd=10 --resolve-startup-const-strings=true --max-image-block-size=524288 --compiler-filter=verify --debuggable --classpath-dir=/data/app/net.san.gtamod.offline.test-8cieUME0gibRRNbxzL3QrQ== --class-loader-context=PCL[]{PCL[/system/framework/android.test.mock.jar]{PCL[/system/framework/android.test.base.jar]}#PCL[/system/framework/android.test.runner.jar]{PCL[/system/framework/android.test.base.jar]#PCL[/system/framework/android.test.mock.jar]{PCL[/system/framework/android.test.base.jar]}}} --generate-mini-debug-info --compact-dex-level=none --compilation-reason=boot
+09-08 14:48:01.951  3677  3677 I dex2oat : setting boot class path to /apex/com.android.runtime/javalib/core-oj.jar:/apex/com.android.runtime/javalib/core-libart.jar:/apex/com.android.runtime/javalib/okhttp.jar:/apex/com.android.runtime/javalib/bouncycastle.jar:/apex/com.android.runtime/javalib/apache-xml.jar:/system/framework/framework.jar:/system/framework/ext.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/ims-common.jar:/system/framework/android.test.base.jar
+09-08 14:48:02.362  1796  3199 D NuPlayerDriver: pause(0xeda18300)
+09-08 14:48:02.364  3552  3581 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+09-08 14:48:02.364  3552  3581 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+09-08 14:48:02.364  1796  3199 D NuPlayerDriver: reset(0xeda18300) at state 6
+09-08 14:48:02.390  1796  3636 D NuPlayerDriver: notifyResetComplete(0xeda18300)
+09-08 14:48:02.390  1796  3199 W AMessage: failed to post message as target looper for handler 0 is gone.
+09-08 14:48:02.432  3552  3552 W MediaPlayer: mediaplayer went away with unhandled events
+09-08 14:48:02.432  3552  3552 W MediaPlayer: mediaplayer went away with unhandled events
+09-08 14:48:03.675  3677  3677 W dex2oat : Verification of java.lang.Object kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharingDeferred$1$1.emit(java.lang.Object, kotlin.coroutines.Continuation) took 266.248ms
+09-08 14:48:04.045  3677  3697 W dex2oat : Verification of kotlin.coroutines.CoroutineContext kotlinx.coroutines.flow.internal.DownstreamExceptionContext.minusKey(kotlin.coroutines.CoroutineContext$Key) took 156.826ms
+09-08 14:48:04.191  3677  3697 W dex2oat : Verification of java.lang.String kotlinx.coroutines.scheduling.CoroutineScheduler.toString() took 137.053ms
+09-08 14:48:04.603  3677  3677 W dex2oat : Verification of void org.hamcrest.core.IsAnything.<init>() took 103.250ms
+09-08 14:48:04.824  3552  3563 I .gtamod.offlin: Background young concurrent copying GC freed 44907(2163KB) AllocSpace objects, 0(0B) LOS objects, 48% free, 2279KB/4468KB, paused 5.381ms total 89.230ms
+09-08 14:48:05.344  3677  3677 I dex2oat : Explicit concurrent copying GC freed 13637(1813KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 13KB/1549KB, paused 67.995ms total 170.848ms
+09-08 14:48:05.421  1671  1747 W audio_hw_generic: Not supplying enough data to HAL, expected position 922157 , only wrote 744286
+09-08 14:48:05.442  3677  3677 I dex2oat : Explicit concurrent copying GC freed 63(31KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 13KB/1549KB, paused 822us total 30.460ms
+09-08 14:48:05.567  3677  3677 I dex2oat : Explicit concurrent copying GC freed 51(14KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 15KB/1551KB, paused 529us total 22.590ms
+09-08 14:48:05.660  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:48:05.763  3677  3677 I dex2oat : dex2oat took 3.960s (1.051s cpu) (threads: 2) arena alloc=0B (0B) java alloc=15KB (15392B) native alloc=3501KB (3585824B) free=622KB (637152B)
+09-08 14:48:05.824  1790  1790 V installd: DexInv: --- END '/data/app/net.san.gtamod.offline.test-8cieUME0gibRRNbxzL3QrQ==/base.apk' (success) ---
+09-08 14:48:05.825  1905  3676 I system_server: The ClassLoaderContext is a special shared library.
+09-08 14:48:05.849  1905  3676 I chatty  : uid=1000(system) BackgroundDexOp identical 9 lines
+09-08 14:48:05.850  1905  3676 I system_server: The ClassLoaderContext is a special shared library.
+09-08 14:48:05.852  1905  3676 I PackageManager.DexOptimizer: Running dexopt (dexoptNeeded=1) on: /data/app/net.san.gtamod.offline-cuRmTYLf2i-Fu5P7h4YKJg==/base.apk pkg=net.san.gtamod.offline isa=x86_64 dexoptFlags=boot_complete,debuggable,public,enable_hidden_api_checks targetFilter=verify oatDir=/data/app/net.san.gtamod.offline-cuRmTYLf2i-Fu5P7h4YKJg==/oat classLoaderContext=PCL[]
+09-08 14:48:05.852  1790  1790 V installd: DexInv: --- BEGIN '/data/app/net.san.gtamod.offline-cuRmTYLf2i-Fu5P7h4YKJg==/base.apk' ---
+09-08 14:48:06.052  3701  3701 W dex2oat : Unexpected CPU variant for X86 using defaults: x86_64
+09-08 14:48:06.052  3701  3701 I dex2oat : /apex/com.android.runtime/bin/dex2oat --input-vdex-fd=-1 --output-vdex-fd=10 --resolve-startup-const-strings=true --max-image-block-size=524288 --compiler-filter=verify --debuggable --classpath-dir=/data/app/net.san.gtamod.offline-cuRmTYLf2i-Fu5P7h4YKJg== --class-loader-context=PCL[] --generate-mini-debug-info --compact-dex-level=none --compilation-reason=boot
+09-08 14:48:06.091  3701  3701 I dex2oat : setting boot class path to /apex/com.android.runtime/javalib/core-oj.jar:/apex/com.android.runtime/javalib/core-libart.jar:/apex/com.android.runtime/javalib/okhttp.jar:/apex/com.android.runtime/javalib/bouncycastle.jar:/apex/com.android.runtime/javalib/apache-xml.jar:/system/framework/framework.jar:/system/framework/ext.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/ims-common.jar:/system/framework/android.test.base.jar
+09-08 14:48:06.518  3701  3701 W dex2oat : Verification of void h.E(int, int) took 115.300ms
+09-08 14:48:07.352  3701  3701 I dex2oat : Explicit concurrent copying GC freed 98(31KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 1624B/1537KB, paused 532us total 3.232ms
+09-08 14:48:07.486  3701  3701 I dex2oat : Explicit concurrent copying GC freed 22(15KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 2600B/1538KB, paused 560us total 81.121ms
+09-08 14:48:07.592  3701  3701 I dex2oat : Explicit concurrent copying GC freed 19(15KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 3536B/1539KB, paused 454us total 33.377ms
+09-08 14:48:07.606  3701  3701 I dex2oat : Explicit concurrent copying GC freed 25(15KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 4472B/1540KB, paused 560us total 4.261ms
+09-08 14:48:07.745  3701  3701 I dex2oat : Explicit concurrent copying GC freed 19(15KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 5408B/1541KB, paused 441us total 136.660ms
+09-08 14:48:07.860  3701  3717 W dex2oat : Accessing hidden method Landroid/view/Window;->getInsetsController()Landroid/view/WindowInsetsController; (blacklist, linking, denied)
+09-08 14:48:07.860  3701  3717 W dex2oat : Accessing hidden method Landroid/view/WindowInsets$Type;->systemBars()I (blacklist, linking, denied)
+09-08 14:48:07.860  3701  3717 W dex2oat : Accessing hidden method Landroid/view/WindowInsetsController;->hide(I)V (blacklist, linking, denied)
+09-08 14:48:07.881  3701  3701 I dex2oat : Explicit concurrent copying GC freed 138(62KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 7792B/1543KB, paused 442us total 3.658ms
+09-08 14:48:07.892  3701  3701 I dex2oat : Explicit concurrent copying GC freed 36(15KB) AllocSpace objects, 0(0B) LOS objects, 99% free, 8728B/1544KB, paused 368us total 8.347ms
+09-08 14:48:07.920  3701  3701 I dex2oat : dex2oat took 1.979s (319.912ms cpu) (threads: 2) arena alloc=0B (0B) java alloc=8728B (8728B) native alloc=1912KB (1958824B) free=559KB (572504B)
+09-08 14:48:07.923  1790  1790 V installd: DexInv: --- END '/data/app/net.san.gtamod.offline-cuRmTYLf2i-Fu5P7h4YKJg==/base.apk' (success) ---
+09-08 14:48:07.933  1905  3676 I system_server: The ClassLoaderContext is a special shared library.
+09-08 14:48:08.737  1905  3676 I chatty  : uid=1000 system_server identical 46 lines
+09-08 14:48:08.746  1905  3676 I system_server: The ClassLoaderContext is a special shared library.
+09-08 14:48:08.746  1905  3676 I BackgroundDexOptService: Pinning optimized code {net.san.gtamod.offline.test, net.san.gtamod.offline}
+09-08 14:48:08.758  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:08.758  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:08.808  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:08.808  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:08.955  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:08.955  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:08.983  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 8298496
+09-08 14:48:09.033  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.033  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.038  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.038  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.047  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.047  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.050  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.050  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.053  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.053  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.054  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.054  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.056  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.056  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.057  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.057  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.060  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.060  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.062  1905  1930 E memtrack: Couldn't load memtrack module
+09-08 14:48:09.062  1905  1930 W android.os.Debug: failed to get memory consumption info: -1
+09-08 14:48:09.809  3552  3571 E TestRunner: failed: originalGameBootsAndLoadsNewGameOffline(net.san.offline.PortTest)
+09-08 14:48:09.810  3552  3571 E TestRunner: ----- begin exception -----
+09-08 14:48:09.810  3552  3571 E TestRunner: java.lang.AssertionError: Native right direction held
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.Assert.fail(Assert.java:89)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.Assert.assertTrue(Assert.java:42)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at net.san.offline.PortTest.nativeMultiTouch(PortTest.java:61)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at net.san.offline.PortTest.originalGameBootsAndLoadsNewGameOffline(PortTest.java:83)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+09-08 14:48:09.810  3552  3571 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2189)
+09-08 14:48:09.810  3552  3571 E TestRunner: ----- end exception -----
+09-08 14:48:09.818  3552  3571 I TestRunner: finished: originalGameBootsAndLoadsNewGameOffline(net.san.offline.PortTest)

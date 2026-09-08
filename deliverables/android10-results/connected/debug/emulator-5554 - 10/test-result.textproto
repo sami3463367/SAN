@@ -1,0 +1,138 @@
+# proto-message: google.testing.platform.proto.api.core.TestSuiteResult
+# 2026-09-08T14:48:12.388240946Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 2
+  device {
+    id: "emulator-5554"
+    friendly_name: "primary"
+  }
+}
+test_status: FAILED
+test_result {
+  test_case {
+    test_class: "PortTest"
+    test_package: "net.san.offline"
+    test_method: "originalGameBootsAndLoadsNewGameOffline"
+    start_time {
+      seconds: 1788878864
+      nanos: 678000000
+    }
+    end_time {
+      seconds: 1788878890
+      nanos: 711000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: FAILED
+  error {
+    error_message: "java.lang.AssertionError: Native right direction held\nat org.junit.Assert.fail(Assert.java:89)\nat org.junit.Assert.assertTrue(Assert.java:42)\nat net.san.offline.PortTest.nativeMultiTouch(PortTest.java:61)\nat net.san.offline.PortTest.originalGameBootsAndLoadsNewGameOffline(PortTest.java:83)\n"
+    error_type: "java.lang.AssertionError"
+    stack_trace: "java.lang.AssertionError: Native right direction held\nat org.junit.Assert.fail(Assert.java:89)\nat org.junit.Assert.assertTrue(Assert.java:42)\nat net.san.offline.PortTest.nativeMultiTouch(PortTest.java:61)\nat net.san.offline.PortTest.originalGameBootsAndLoadsNewGameOffline(PortTest.java:83)\n"
+  }
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/logcat-net.san.offline.PortTest-originalGameBootsAndLoadsNewGameOffline.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "PortTest"
+    test_package: "net.san.offline"
+    test_method: "spriteTransformsAndClipReplacementAreCorrect"
+    start_time {
+      seconds: 1788878891
+      nanos: 44000000
+    }
+    end_time {
+      seconds: 1788878891
+      nanos: 46000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/logcat-net.san.offline.PortTest-spriteTransformsAndClipReplacementAreCorrect.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

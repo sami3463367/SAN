@@ -52,18 +52,38 @@ public class PortTest {
         android.view.MotionEvent event=android.view.MotionEvent.obtain(down,SystemClock.uptimeMillis(),action,ids.length,props,coords,0,0,1,1,0,0,android.view.InputDevice.SOURCE_TOUCHSCREEN,0);
         InstrumentationRegistry.getInstrumentation().runOnMainSync(()->activity.gameView.dispatchTouchEvent(event));event.recycle();SystemClock.sleep(250);
     }
+    private static boolean dialogue()throws Exception {
+        java.lang.reflect.Method method=Class.forName("h").getDeclaredMethod("kY");method.setAccessible(true);return (Boolean)method.invoke(null);
+    }
+    private static void finishIntro()throws Exception {
+        // The original deliberately clears ALL held keys when a dialogue is dismissed.
+        // Test movement/fire in live gameplay, not while FIRE is confirming Johnny Gat's dialogue.
+        long until=SystemClock.uptimeMillis()+30000,stableSince=0;
+        while(SystemClock.uptimeMillis()<until) {
+            if(dialogue() || booleanField("dd") || booleanField("de")) {key(-5);stableSince=0;}
+            else {
+                if(stableSince==0)stableSince=SystemClock.uptimeMillis();
+                if(SystemClock.uptimeMillis()-stableSince>=1000)return;
+                SystemClock.sleep(100);
+            }
+        }
+        fail("Intro did not reach unobstructed gameplay; db="+field("db"));
+    }
     private static void nativeMultiTouch(GameActivity activity)throws Exception {
+        finishIntro();
         android.graphics.RectF pad=activity.gameView.padBounds(),fire=activity.gameView.controlBounds(-5);
         float[] move={pad.centerX()+pad.width()*.36f,pad.centerY()},attack={fire.centerX(),fire.centerY()};
         long down=SystemClock.uptimeMillis();
         touch(activity,down,android.view.MotionEvent.ACTION_DOWN,new int[]{11},new float[][]{move});
-        touch(activity,down,android.view.MotionEvent.ACTION_POINTER_DOWN|(1<<8),new int[]{11,39},new float[][]{move,attack});
-        assertTrue("Native right direction held",held(1));assertTrue("Native fire held simultaneously",held(4));
-        touch(activity,down,android.view.MotionEvent.ACTION_POINTER_UP,new int[]{11,39},new float[][]{move,attack});
+        touch(activity,down,android.view.MotionEvent.ACTION_POINTER_DOWN|(1<<8),new int[]{11,19},new float[][]{move,attack});
+        assertTrue("Native right direction held (dialogue="+dialogue()+", db="+field("db")+")",held(1));
+        assertTrue("Native fire held simultaneously",held(4));
+        shot("08-native-multitouch");
+        touch(activity,down,android.view.MotionEvent.ACTION_POINTER_UP,new int[]{11,19},new float[][]{move,attack});
         assertFalse("Released direction",held(1));assertTrue("Other finger still fires",held(4));
-        touch(activity,down,android.view.MotionEvent.ACTION_UP,new int[]{39},new float[][]{attack});assertFalse("Released fire",held(4));
-        touch(activity,down,android.view.MotionEvent.ACTION_DOWN,new int[]{61},new float[][]{move});
-        touch(activity,down,android.view.MotionEvent.ACTION_CANCEL,new int[]{61},new float[][]{move});assertFalse("Cancel releases direction",held(1));
+        touch(activity,down,android.view.MotionEvent.ACTION_UP,new int[]{19},new float[][]{attack});assertFalse("Released fire",held(4));
+        touch(activity,down,android.view.MotionEvent.ACTION_DOWN,new int[]{23},new float[][]{move});
+        touch(activity,down,android.view.MotionEvent.ACTION_CANCEL,new int[]{23},new float[][]{move});assertFalse("Cancel releases direction",held(1));
     }
     @Test public void originalGameBootsAndLoadsNewGameOffline() throws Exception {
         android.app.Instrumentation ins=InstrumentationRegistry.getInstrumentation();
@@ -80,7 +100,7 @@ public class PortTest {
         key(-6);key('5');key('5');
         GameRuntime.canvas().enqueueKey('6',true);GameRuntime.canvas().enqueueKey('5',true);SystemClock.sleep(900);
         GameRuntime.canvas().enqueueKey('6',false);GameRuntime.canvas().enqueueKey('5',false);SystemClock.sleep(500);shot("08-movement-fire");
-        nativeMultiTouch(activity);
+        try {nativeMultiTouch(activity);} catch(AssertionError error){shot("08-native-failure");throw error;}
         assertNull(GameRuntime.failure);assertTrue(GameRuntime.canvas().frames>30);
         assertTrue(activity.gameView.getWidth()>activity.gameView.getHeight());
         assertEquals(.75f,activity.gameView.viewport().width()/activity.gameView.viewport().height(),.001f);

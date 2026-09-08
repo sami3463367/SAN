@@ -48,7 +48,8 @@ cp app/build/outputs/bundle/release/app-release.aab deliverables/san-offline.aab
 jarsigner -verify deliverables/san-offline.aab > deliverables/aab-signature.txt
 python3 scripts/verify_package.py deliverables/san-offline.apk > deliverables/release-apk-verification.json
 python3 scripts/verify_package.py deliverables/san-offline.aab > deliverables/release-aab-verification.json
-curl -fL https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o "$WORK/bundletool.jar"
+cp "$WORK/upload-key-backup.cms" deliverables/upload-key-backup.cms
+curl --retry 3 -fL https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar -o "$WORK/bundletool.jar"
 java -jar "$WORK/bundletool.jar" validate --bundle=deliverables/san-offline.aab > deliverables/bundle-validation.txt
 java -jar "$WORK/bundletool.jar" dump manifest --bundle=deliverables/san-offline.aab > deliverables/release-manifest.xml
 python3 - <<'PY'

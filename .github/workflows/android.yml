@@ -2,7 +2,7 @@ name: Android port
 on:
   push:
     branches: [arena/01a0814e-san]
-    paths-ignore: ['deliverables/**', 'docs/inspection/**']
+    paths-ignore: ['deliverables/**', 'docs/**', 'README.md']
   workflow_dispatch:
 permissions:
   contents: write
@@ -27,6 +27,7 @@ jobs:
         run: |
           yes | sdkmanager --licenses >/dev/null || true
           mkdir -p deliverables
+          rm -rf deliverables/android10-results deliverables/android16-results deliverables/test-results deliverables/unit-results deliverables/evidence
           sdkmanager 'platforms;android-36' 'build-tools;36.0.0' 2>&1 | tee deliverables/sdk-log.txt
       - name: Inventory and build
         run: |
@@ -54,7 +55,7 @@ jobs:
             adb shell settings put global airplane_mode_on 1
             adb shell svc wifi disable
             adb shell settings put secure immersive_mode_confirmations confirmed
-            ./gradlew connectedDebugAndroidTest --stacktrace; RESULT=$?; mkdir -p deliverables/evidence/android10; adb pull /data/local/tmp/san-evidence/. deliverables/evidence/android10/ || true; adb logcat -d > deliverables/evidence/android10-logcat.txt; cp -r app/build/outputs/androidTest-results/connected deliverables/android10-results || true; exit $RESULT
+            bash scripts/emulator_test.sh android10
       - name: Test on Android 16
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -68,7 +69,7 @@ jobs:
             adb shell settings put global airplane_mode_on 1
             adb shell svc wifi disable
             adb shell settings put secure immersive_mode_confirmations confirmed
-            ./gradlew connectedDebugAndroidTest --rerun-tasks --stacktrace; RESULT=$?; mkdir -p deliverables/evidence/android16; adb pull /data/local/tmp/san-evidence/. deliverables/evidence/android16/ || true; adb logcat -d > deliverables/evidence/android16-logcat.txt; cp -r app/build/outputs/androidTest-results/connected deliverables/android16-results || true; exit $RESULT
+            bash scripts/emulator_test.sh android16
       - name: Create initial signed release after tests pass
         run: bash scripts/create_initial_release.sh
       - name: Package build outputs

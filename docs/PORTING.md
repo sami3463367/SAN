@@ -112,7 +112,8 @@ verification. Keep permission covering both the underlying Saints Row content
 and GTA-branded material; repository access alone would not provide that right.
 Do not submit a build under misleading claims about being the official GTA V.
 
-Test APKs use debug signing. The provided unsigned AAB requires the owner's
-private upload key before Play submission. No signing secrets are committed.
+The final `san-offline.apk` and `san-offline.aab` are release-signed using the
+owner-approved new upload key. The separate test APK and unsigned AAB remain
+development outputs, not the final submission files. No signing secrets are committed.
 See `SIGNING.md`. Store listing, content rating, privacy disclosures and any
 app/account-specific testing requirements remain Play Console tasks.

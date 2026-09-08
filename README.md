@@ -8,16 +8,36 @@ assets; it is not a replacement game drawn from screenshots.
 > **Saints Row 2 mobile game with GTA-branded modifications**. This project does
 > not contain the desktop/console GTA V game.
 
-## Downloads
+## Signed downloads · version 1.0.0
 
-- [`deliverables/san-offline-test.apk`](deliverables/san-offline-test.apk) —
-  installable, **debug-signed test build** for Android 10+.
-- [`deliverables/san-offline-unsigned.aab`](deliverables/san-offline-unsigned.aab) —
-  release bundle, **requires your upload-key signature before Play submission**.
-- [`deliverables/SHA256SUMS`](deliverables/SHA256SUMS) — checksums.
+- **[Signed APK](deliverables/san-offline.apk)** — install on an Android 10+ phone.
+- **[Signed AAB](deliverables/san-offline.aab)** — upload bundle for the new Play listing.
+- [Checksums](deliverables/SHA256SUMS) · [Release provenance](deliverables/RELEASE.txt)
+- [Verification results](docs/VERIFICATION.md) · [Signing and key-backup instructions](docs/SIGNING.md)
 
-These are actual Android build outputs. See the test evidence in `deliverables/`
-and [signing instructions](docs/SIGNING.md). No private signing key is committed.
+The private upload-key backup, `SAN-private-signing-backup.zip`, is provided
+separately in the Arena workspace and **is not in GitHub**. Download it and store
+it securely. Never publish that ZIP. The repository contains only the public
+certificate and an encrypted recovery envelope.
+
+The signed AAB is not the older `san-offline-unsigned.aab`. The older
+`san-offline-test.apk` is debug-signed and is not the release APK. Google Play
+listing, content rating, licensing and physical-device QA still need completing.
+The checked-in signed files are the release snapshot identified in `RELEASE.txt`;
+future builds must reuse your saved private upload key, not generate a new one.
+
+## Verification
+
+The completed [build run](https://github.com/sami3463367/SAN/actions/runs/34242193137)
+passed **7 JVM tests** plus the **2 instrumentation tests on each of Android 10
+and Android 16**. The instrumentation suite covers original-game startup,
+character creation, gameplay, simultaneous native touch inputs, independent
+finger release/cancellation, save writing, local audio players, background pause,
+launcher resume, sprite transforms and clipping.
+
+Release APK signature verification and bundletool AAB validation passed. The
+private backup's certificate was matched to the release certificate. These are
+emulator checks, not a full mission playthrough or a guarantee of Play approval.
 
 ## Android support
 
@@ -79,6 +99,5 @@ The original 10 classes are converted to DEX by Android's build tools.
 
 This is an initial port, not a claim of perfect emulation of every old handset.
 Android MIDI synthesis and arc-edge rasterization can differ. Full mission
-playthroughs, physical-device QA and release signing remain necessary before
-publishing. Publishing rights were confirmed by the repository owner, not
+playthroughs, physical-device QA remain necessary before publishing. Publishing rights were confirmed by the repository owner, not
 independently verified by this project.

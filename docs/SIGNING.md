@@ -1,62 +1,78 @@
 # Signing for Google Play
 
-The debug-signed `san-offline-test.apk` is installable on Android 10 and newer.
-**It is for testing, not Play submission.** The supplied `san-offline-unsigned.aab`
-is the release bundle, but it must be signed with your upload key first.
+## Delivered release
 
-Do not put private keys/passwords in Git, issues, screenshots, or chat. Keep an
-offline backup. If this app already exists on Play, use its existing upload key
-and application ID, and increase the version code. The current application ID is
-`net.san.gtamod.offline`; confirm this before the first publication because it
-cannot be changed for an existing Play listing.
+- `deliverables/san-offline.apk`: release-signed installable APK.
+- `deliverables/san-offline.aab`: release-signed upload bundle.
+- Application ID: `net.san.gtamod.offline`.
+- Version: `1.0.0`, version code `1`.
+- Keystore type: PKCS12; RSA 3072; alias: `san-upload`.
+- Public certificate: `deliverables/upload-certificate.pem`.
+- Certificate SHA-256:
+  `23ae1a3126729c7c847304e79fb714ba23f6d26fff6b49a08eec6a9095df7ca0`.
 
-## Build signed releases on your own machine
+A **new-app upload key was generated with the owner's approval**. Do not create
+another key for updates to this listing. No private signing material is in Git.
 
-Install JDK 17 and Android SDK platform 36. Generate an upload key **only for a
-new app** if you do not already have one; keytool prompts locally for passwords:
+## Download and protect the private backup
 
-```sh
-keytool -genkeypair -keystore "$HOME/san-upload.jks" -alias san-upload \
-  -keyalg RSA -keysize 3072 -validity 10000
-```
+`SAN-private-signing-backup.zip` is in the private Arena workspace, not GitHub.
+It contains:
 
-Then supply the signing configuration through environment variables, using
-hidden prompts rather than writing passwords into shell history:
+- `san-upload.p12`: the private upload keystore.
+- `PASSWORD.txt`: its generated password (also the key password).
+- `README.txt`: alias, application ID and handling instructions.
+
+**Save the entire ZIP in an encrypted offline backup or password manager. Never
+upload it to the public repository, Play store listing, issues, or chat.** Do not
+share the password or keystore publicly. The backup was decrypted successfully,
+and its public certificate was compared with the release certificate.
+
+The build runner encrypted this ZIP using the workspace's public transport
+certificate before exporting it. `deliverables/upload-key-backup.cms` is that
+AES-256-GCM encrypted recovery envelope; it is not the plaintext private key.
+The recipient private transport key stays inside ignored `.signing/` in the
+Arena workspace. `scripts/recover_signing_backup.py` can recover the ZIP there.
+Cloning GitHub alone does **not** recover the private key, so download the backup.
+
+## Build future signed updates on your machine
+
+Install JDK 17 and Android SDK platform 36. Extract the private backup into a
+secure directory outside the repository. Increase `versionCode` in
+`app/build.gradle` for every subsequent Play upload. Keep the application ID.
+
+Supply signing details via environment variables and a hidden local prompt:
 
 ```bash
-export ANDROID_KEYSTORE="$HOME/san-upload.jks"
+export ANDROID_KEYSTORE="$HOME/private-san/san-upload.p12"
 export ANDROID_KEY_ALIAS="san-upload"
 read -rsp 'Keystore password: ' ANDROID_STORE_PASSWORD; echo
 export ANDROID_STORE_PASSWORD
-read -rsp 'Key password: ' ANDROID_KEY_PASSWORD; echo
-export ANDROID_KEY_PASSWORD
+export ANDROID_KEY_PASSWORD="$ANDROID_STORE_PASSWORD"
 ./gradlew :app:assembleRelease :app:bundleRelease
 unset ANDROID_STORE_PASSWORD ANDROID_KEY_PASSWORD
 ```
 
-Outputs:
+Outputs are `app/build/outputs/apk/release/app-release.apk` and
+`app/build/outputs/bundle/release/app-release.aab`. The ordinary CI workflow
+builds unsigned development bundles without your private key. Its one-time key
+bootstrap will not replace an existing key or silently re-sign future versions
+with a different certificate. The checked-in signed files remain the release
+snapshot recorded in `deliverables/RELEASE.txt` until you supply a signed update.
 
-- `app/build/outputs/apk/release/app-release.apk`
-- `app/build/outputs/bundle/release/app-release.aab`
+Verify with `apksigner verify --verbose` and `jarsigner -verify`. The delivered
+APK uses APK Signature Scheme v2, supported by Android 10+. The AAB passes
+JarFile signature verification and bundletool validation. Current JDK jarsigner
+also emits self-signed/no-timestamp warnings and JarInputStream-order warnings
+because AGP places the JAR manifest near the end of the bundle; the full
+verification output is preserved in `deliverables/aab-signature.txt` rather than
+hidden. These checks do not guarantee Play Console approval.
 
-Verify with Android SDK `apksigner verify --verbose` for the APK and
-`jarsigner -verify -verbose` for the AAB. Self-signed certificate trust warnings
-from jarsigner are normal for Android upload keys; missing/broken signatures
-are not. Enroll in Play App Signing in Play Console as appropriate. Never use
-the public Android debug key for a Play release.
-
-Alternatively, sign the already-produced AAB on a machine with JDK installed:
-
-```bash
-cp san-offline-unsigned.aab san-offline-upload.aab
-jarsigner -keystore "$HOME/san-upload.jks" san-offline-upload.aab san-upload
-jarsigner -verify san-offline-upload.aab
-```
-
-The APK and AAB should be signed with your intended certificates before external
-distribution. To update an installed debug test APK with a release-signed APK,
-uninstall the debug version first (this clears local saves), or use a separate
-application ID for testing in your release process.
+Enroll in Play App Signing for the new app. Play may use an app-signing
+certificate different from this upload certificate. Installing between builds
+signed with different certificates can require uninstalling first, which clears
+local saves. Do not use `san-offline-test.apk` (debug signed) or
+`san-offline-unsigned.aab` for the production release.
 
 ## Publishing checklist
 

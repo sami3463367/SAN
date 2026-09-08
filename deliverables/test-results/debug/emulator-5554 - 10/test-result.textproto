@@ -1,0 +1,133 @@
+# proto-message: google.testing.platform.proto.api.core.TestSuiteResult
+# 2026-09-08T14:26:22.234146320Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 2
+  device {
+    id: "emulator-5554"
+    friendly_name: "primary"
+  }
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "PortTest"
+    test_package: "net.san.offline"
+    test_method: "originalGameBootsAndLoadsNewGameOffline"
+    start_time {
+      seconds: 1788877551
+      nanos: 721000000
+    }
+    end_time {
+      seconds: 1788877580
+      nanos: 396000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/logcat-net.san.offline.PortTest-originalGameBootsAndLoadsNewGameOffline.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "PortTest"
+    test_package: "net.san.offline"
+    test_method: "spriteTransformsAndClipReplacementAreCorrect"
+    start_time {
+      seconds: 1788877580
+      nanos: 785000000
+    }
+    end_time {
+      seconds: 1788877580
+      nanos: 786000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/logcat-net.san.offline.PortTest-spriteTransformsAndClipReplacementAreCorrect.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/SAN/SAN/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 10/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

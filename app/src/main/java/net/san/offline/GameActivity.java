@@ -51,11 +51,11 @@ public final class GameActivity extends Activity {
     private int mapKey(int key){
         if(key>=KeyEvent.KEYCODE_0&&key<=KeyEvent.KEYCODE_9)return '0'+key-KeyEvent.KEYCODE_0;
         switch(key){
-            case KeyEvent.KEYCODE_DPAD_UP:case KeyEvent.KEYCODE_W:return '2';
-            case KeyEvent.KEYCODE_DPAD_DOWN:case KeyEvent.KEYCODE_S:return '8';
-            case KeyEvent.KEYCODE_DPAD_LEFT:case KeyEvent.KEYCODE_A:return '4';
-            case KeyEvent.KEYCODE_DPAD_RIGHT:case KeyEvent.KEYCODE_D:return '6';
-            case KeyEvent.KEYCODE_DPAD_CENTER:case KeyEvent.KEYCODE_ENTER:case KeyEvent.KEYCODE_SPACE:case KeyEvent.KEYCODE_BUTTON_A:return '5';
+            case KeyEvent.KEYCODE_DPAD_UP:case KeyEvent.KEYCODE_W:return -1;
+            case KeyEvent.KEYCODE_DPAD_DOWN:case KeyEvent.KEYCODE_S:return -2;
+            case KeyEvent.KEYCODE_DPAD_LEFT:case KeyEvent.KEYCODE_A:return -3;
+            case KeyEvent.KEYCODE_DPAD_RIGHT:case KeyEvent.KEYCODE_D:return -4;
+            case KeyEvent.KEYCODE_DPAD_CENTER:case KeyEvent.KEYCODE_ENTER:case KeyEvent.KEYCODE_SPACE:case KeyEvent.KEYCODE_BUTTON_A:return -5;
             case KeyEvent.KEYCODE_Q:case KeyEvent.KEYCODE_STAR:case KeyEvent.KEYCODE_BUTTON_L1:return '*';
             case KeyEvent.KEYCODE_E:case KeyEvent.KEYCODE_POUND:case KeyEvent.KEYCODE_BUTTON_R1:return '#';
             case KeyEvent.KEYCODE_F:case KeyEvent.KEYCODE_BUTTON_X:return '1';

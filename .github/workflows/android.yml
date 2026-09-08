@@ -22,15 +22,17 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.13'
+      - uses: android-actions/setup-android@v3
       - name: Set up Android SDK
         run: |
           yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+          mkdir -p deliverables
+          sdkmanager 'platforms;android-36' 'build-tools;36.0.0' 2>&1 | tee deliverables/sdk-log.txt
       - name: Inventory and build
         run: |
           python3 scripts/inspect_game.py > /tmp/inspection.log
-          gradle wrapper --gradle-version 8.13
-          ./gradlew testDebugUnitTest assembleDebug bundleRelease --stacktrace
+          gradle wrapper --gradle-version 8.13 2>&1 | tee deliverables/build-log.txt
+          ./gradlew testDebugUnitTest assembleDebug bundleRelease --stacktrace 2>&1 | tee -a deliverables/build-log.txt
       - name: Enable emulator acceleration
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
@@ -69,6 +71,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add deliverables gradlew gradlew.bat gradle/wrapper docs/asset-inventory.json || true
+          git add deliverables docs/asset-inventory.json
+          if [ -f gradlew ]; then git add gradlew gradlew.bat gradle/wrapper; fi
           git diff --cached --quiet || git commit -m 'Record Android build outputs and emulator evidence'
           git push origin HEAD:arena/01a0814e-san

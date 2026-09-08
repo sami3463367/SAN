@@ -51,7 +51,7 @@ public final class GameView extends View {
             add(right+bw+6*unit,top+h*.25f,bw,54*unit,'*',"*","WEAPON");
             add(right+2*(bw+6*unit),top+h*.25f,bw,54*unit,'#',"#","TARGET");
             float fw=Math.min(panelW,148*unit);
-            add(right+(panelW-fw)/2,top+h*.47f,fw,100*unit,'5',"5","FIRE / OK");
+            add(right+(panelW-fw)/2,top+h*.47f,fw,100*unit,-5,"5","FIRE / OK");
         }
         add(left,top+h-58*unit,panelW,42*unit,-6,"SELECT","LEFT SOFT KEY");
         add(right,top+h-58*unit,panelW,42*unit,-7,"MENU / BACK","RIGHT SOFT KEY");
@@ -70,7 +70,7 @@ public final class GameView extends View {
             paint.setStyle(Paint.Style.STROKE);paint.setStrokeWidth(unit);paint.setColor(active?0xffc6a6ff:0xff334056);c.drawRoundRect(b.rect,10*unit,10*unit,paint);paint.setStyle(Paint.Style.FILL);
             String label=b.code==MUTE?(Manager.isMuted()?"MUTED":"SOUND"):b.label;
             float y=b.rect.centerY()-(b.detail.isEmpty()?0:7*unit);
-            label(c,label,b.rect.centerX(),y,b.code=='5'&&!keypad?32:b.code<=-100?9:14,0xfff0f2f8);
+            label(c,label,b.rect.centerX(),y,b.code==-5&&!keypad?32:b.code<=-100?9:14,0xfff0f2f8);
             if(!b.detail.isEmpty())label(c,b.detail,b.rect.centerX(),y+21*unit,8,0xffaebbd0);
         }
         if(GameRuntime.failure!=null) {
@@ -82,7 +82,7 @@ public final class GameView extends View {
     private void drawPad(Canvas c) {
         float cx=pad.centerX(),cy=pad.centerY(),r=pad.width()/2,cell=pad.width()/3;
         paint.setColor(0xff101722);c.drawCircle(cx,cy,r+7*unit,paint);
-        int[] codes={'2','4','6','8'};float[][] places={{cx,cy-cell},{cx-cell,cy},{cx+cell,cy},{cx,cy+cell}};
+        int[] codes={-1,-3,-4,-2};float[][] places={{cx,cy-cell},{cx-cell,cy},{cx+cell,cy},{cx,cy+cell}};
         String[] marks={"▲","◀","▶","▼"};
         for(int i=0;i<4;i++) {
             float x=places[i][0],y=places[i][1];
@@ -99,7 +99,7 @@ public final class GameView extends View {
         if(Boolean.TRUE.equals(padPointers.get(id))) {
             float dx=(x-pad.centerX())/(pad.width()/2),dy=(y-pad.centerY())/(pad.height()/2);
             if(Math.hypot(dx,dy)<.22){keys.release(id);return;}
-            int horizontal=dx<-.28?'4':dx>.28?'6':0,vertical=dy<-.28?'2':dy>.28?'8':0;
+            int horizontal=dx<-.28?-3:dx>.28?-4:0,vertical=dy<-.28?-1:dy>.28?-2:0;
             if(horizontal!=0&&vertical!=0)keys.update(id,horizontal,vertical);
             else if(horizontal!=0)keys.update(id,horizontal);else if(vertical!=0)keys.update(id,vertical);else keys.release(id);
         }else {

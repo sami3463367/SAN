@@ -40,6 +40,31 @@ public class PortTest {
             byte[] buffer=new byte[1024];while(in.read(buffer)!=-1){}
         }
     }
+    private static boolean booleanField(String name)throws Exception{Field f=Class.forName("h").getDeclaredField(name);f.setAccessible(true);return f.getBoolean(null);}
+    private static boolean held(int index)throws Exception{Field f=Class.forName("h").getDeclaredField("k");f.setAccessible(true);return ((boolean[])f.get(null))[index];}
+    private static void touch(GameActivity activity,long down,int action,int[] ids,float[][] xy) {
+        android.view.MotionEvent.PointerProperties[] props=new android.view.MotionEvent.PointerProperties[ids.length];
+        android.view.MotionEvent.PointerCoords[] coords=new android.view.MotionEvent.PointerCoords[ids.length];
+        for(int i=0;i<ids.length;i++){
+            props[i]=new android.view.MotionEvent.PointerProperties();props[i].id=ids[i];props[i].toolType=android.view.MotionEvent.TOOL_TYPE_FINGER;
+            coords[i]=new android.view.MotionEvent.PointerCoords();coords[i].x=xy[i][0];coords[i].y=xy[i][1];coords[i].pressure=1;coords[i].size=1;
+        }
+        android.view.MotionEvent event=android.view.MotionEvent.obtain(down,SystemClock.uptimeMillis(),action,ids.length,props,coords,0,0,1,1,0,0,android.view.InputDevice.SOURCE_TOUCHSCREEN,0);
+        InstrumentationRegistry.getInstrumentation().runOnMainSync(()->activity.gameView.dispatchTouchEvent(event));event.recycle();SystemClock.sleep(250);
+    }
+    private static void nativeMultiTouch(GameActivity activity)throws Exception {
+        android.graphics.RectF pad=activity.gameView.padBounds(),fire=activity.gameView.controlBounds(-5);
+        float[] move={pad.centerX()+pad.width()*.36f,pad.centerY()},attack={fire.centerX(),fire.centerY()};
+        long down=SystemClock.uptimeMillis();
+        touch(activity,down,android.view.MotionEvent.ACTION_DOWN,new int[]{11},new float[][]{move});
+        touch(activity,down,android.view.MotionEvent.ACTION_POINTER_DOWN|(1<<8),new int[]{11,39},new float[][]{move,attack});
+        assertTrue("Native right direction held",held(1));assertTrue("Native fire held simultaneously",held(4));
+        touch(activity,down,android.view.MotionEvent.ACTION_POINTER_UP,new int[]{11,39},new float[][]{move,attack});
+        assertFalse("Released direction",held(1));assertTrue("Other finger still fires",held(4));
+        touch(activity,down,android.view.MotionEvent.ACTION_UP,new int[]{39},new float[][]{attack});assertFalse("Released fire",held(4));
+        touch(activity,down,android.view.MotionEvent.ACTION_DOWN,new int[]{61},new float[][]{move});
+        touch(activity,down,android.view.MotionEvent.ACTION_CANCEL,new int[]{61},new float[][]{move});assertFalse("Cancel releases direction",held(1));
+    }
     @Test public void originalGameBootsAndLoadsNewGameOffline() throws Exception {
         android.app.Instrumentation ins=InstrumentationRegistry.getInstrumentation();
         Intent intent=new Intent(ins.getTargetContext(),GameActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -55,6 +80,7 @@ public class PortTest {
         key(-6);key('5');key('5');
         GameRuntime.canvas().enqueueKey('6',true);GameRuntime.canvas().enqueueKey('5',true);SystemClock.sleep(900);
         GameRuntime.canvas().enqueueKey('6',false);GameRuntime.canvas().enqueueKey('5',false);SystemClock.sleep(500);shot("08-movement-fire");
+        nativeMultiTouch(activity);
         assertNull(GameRuntime.failure);assertTrue(GameRuntime.canvas().frames>30);
         assertTrue(activity.gameView.getWidth()>activity.gameView.getHeight());
         assertEquals(.75f,activity.gameView.viewport().width()/activity.gameView.viewport().height(),.001f);
@@ -67,6 +93,13 @@ public class PortTest {
             p.realize();p.prefetch();p.start();assertEquals(Player.STARTED,p.getState());SystemClock.sleep(100);p.stop();p.close();
         }
         key(-7);shot("09-pause-menu");
+        // Actual background/resume lifecycle, including automatic save and released keys.
+        ins.getUiAutomation().performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_HOME);
+        long until=SystemClock.uptimeMillis()+5000;while(!booleanField("f")&&SystemClock.uptimeMillis()<until)SystemClock.sleep(100);
+        assertTrue("Original loop pauses in background",booleanField("f"));
+        long pausedFrames=GameRuntime.canvas().frames;SystemClock.sleep(500);assertTrue(GameRuntime.canvas().frames<=pausedFrames+1);
+        ins.getTargetContext().startActivity(intent);SystemClock.sleep(1500);assertFalse("Resumes on return",booleanField("f"));
+        key(-5);shot("10-resumed");assertNull(GameRuntime.failure);
     }
     @Test public void spriteTransformsAndClipReplacementAreCorrect() {
         int[] colors={0xffff0000,0xff00ff00,0xff0000ff,0xffffff00,0xffff00ff,0xff00ffff};

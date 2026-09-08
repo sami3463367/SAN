@@ -6,3 +6,6 @@ local.properties
 *.jks
 .env
 __pycache__/
+
+# Private Android signing material — never commit
+.signing/

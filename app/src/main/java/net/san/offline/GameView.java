@@ -131,5 +131,7 @@ public final class GameView extends View {
     public void releaseAll(){keys.releaseAll();padPointers.clear();uiPointers.clear();invalidate();}
     public void hardware(int androidCode,int gameCode,boolean pressed){if(pressed)keys.update(-1000-androidCode,gameCode);else keys.release(-1000-androidCode);invalidate();}
     public void back(){javax.microedition.lcdui.Canvas c=GameRuntime.canvas();if(c!=null){c.enqueueKey(-7,true);postDelayed(()->c.enqueueKey(-7,false),100);}}
+    RectF controlBounds(int code){for(Button button:buttons)if(button.code==code)return new RectF(button.rect);throw new IllegalArgumentException("No control "+code);}
+    RectF padBounds(){return new RectF(pad);}
     public RectF viewport(){return new RectF(viewport);}
 }

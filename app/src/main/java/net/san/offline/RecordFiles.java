@@ -20,7 +20,7 @@ public final class RecordFiles {
         File file=path(dir,name), backup=new File(file+".bak");
         boolean fresh=deleted.contains(file.getAbsolutePath());
         if(!fresh && !file.exists() && backup.exists()) move(backup,file);
-        if(!fresh && !file.exists() && !create) throw new FileNotFoundException(name);
+        if((fresh || !file.exists()) && !create) throw new FileNotFoundException(name);
         RecordFiles store=new RecordFiles(file);
         if(!fresh && file.exists()) {
             try(DataInputStream in=new DataInputStream(new FileInputStream(file))) {

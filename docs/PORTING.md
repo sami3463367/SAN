@@ -78,7 +78,7 @@ landscape screen with gameplay would require a separate camera/UI rewrite.
 handset. Android rasterization of arcs can differ at individual boundary pixels.
 The source has pre-existing mixed branding/art quality. No claim is made that
 all missions have been played through or that output is pixel-perfect against a
-reference handset. Optional original vibration is not currently emulated.
+reference handset. Original vibration calls use Android’s vibrator when hardware is available.
 
 ## Controls verified from the original help text
 
@@ -99,8 +99,8 @@ The built-in game settings still offer steering/directional driving modes.
 
 ## Offline and privacy
 
-No INTERNET, network state, SMS, billing, advertising ID, analytics or external
-storage permissions. Resources and audio are bundled. Record stores use internal
+The only requested permission is VIBRATE. No INTERNET, network state, SMS,
+billing, advertising ID, analytics or external storage permissions. Resources and audio are bundled. Record stores use internal
 private storage. Audio extraction uses private cache. No accounts or telemetry.
 Android cloud backup is disabled. Uninstalling/clearing app data removes saves.
 This is fully offline **at runtime**; building the app requires SDK/Gradle downloads.

@@ -1,2 +1,0 @@
-09-08 14:35:53.476  2807  2953 I TestRunner: started: spriteTransformsAndClipReplacementAreCorrect(net.san.offline.PortTest)
-09-08 14:35:53.487  2807  2953 I TestRunner: finished: spriteTransformsAndClipReplacementAreCorrect(net.san.offline.PortTest)

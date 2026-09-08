@@ -1,4 +1,0 @@
-09-08 14:48:10.141  3552  3571 I TestRunner: started: spriteTransformsAndClipReplacementAreCorrect(net.san.offline.PortTest)
-09-08 14:48:10.144  1709  1727 D gralloc_ranchu: gralloc_alloc: Creating ashmem region of size 28672
-09-08 14:48:10.145  2045  2479 D HostConnection: HostConnection::get() New Host Connection established 0x73aff8578860, tid 2479
-09-08 14:48:10.150  3552  3571 I TestRunner: finished: spriteTransformsAndClipReplacementAreCorrect(net.san.offline.PortTest)
